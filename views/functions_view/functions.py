@@ -28,12 +28,6 @@ class Diretorios:
             print(f"Erro ao carregar a imagem '{self.caminho}': {e}")
             self.img = None
 
-from PIL import Image, ImageTk
-from tkinter.constants import NW
-import os
-
-
-
 class Redimensionamento:
     def __init__(self, imagem) -> None:
         self.imagem = imagem    
