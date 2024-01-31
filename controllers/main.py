@@ -35,6 +35,6 @@ class Controller:
             pass
         else:
             pass
-            self.view.switch("signin")
+        #    self.view.switch("signin")
 
         self.view.start_mainloop()

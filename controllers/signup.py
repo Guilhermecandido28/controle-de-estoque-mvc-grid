@@ -7,13 +7,13 @@ class SignUpController:
     def __init__(self, model: Model, view: View):
         self.model = model
         self.view = view
-        self.frame = self.view.frames["signup"]
+        #self.frame = self.view.frames["signup"]
         self._bind()
 
     def _bind(self) -> None:
         """Binds controller functions with respective buttons in the view"""
-        self.frame.signup_btn.config(command=self.signup)
-        self.frame.signin_btn.config(command=self.signin)
+      #  self.frame.signup_btn.config(command=self.signup)
+      #  self.frame.signin_btn.config(command=self.signin)
 
     def signin(self) -> None:
         self.view.switch("signin")

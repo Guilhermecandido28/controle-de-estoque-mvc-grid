@@ -10,15 +10,15 @@ class HeaderView(Frame):
 
         #Definições dos frames
         self.frame_header = Frame(self,height=90,width=1500, background="#000000")
-        self.frame_menu = Frame(self,height=50,width=1500, background="skyblue3")
-        self.frame_header_menu = tk.Canvas(self, height=50,width=1500, background="gray")
-        self.frame_menuoptions = Frame(self,height=50,width=1500, background="olivedrab1")
-        self.frame_content = Frame(self,height=770,width=1500, background="maroon3")
+        self.frame_menu = Frame(self,height=50,width=1500)
+        self.frame_header_menu = tk.Canvas(self, height=80,width=1500, background="white")
+        self.frame_menuoptions = Frame(self,height=50,width=1500, background="#8A8A8A")
+        self.frame_content = Frame(self,height=770,width=1500, background="white")
 
         self.frame_header.grid(column=0,row=0,ipadx=0,ipady=0,padx=0,pady=0,sticky="we")
         self.frame_menu.grid(column=0,row=1,ipadx=0,ipady=0,padx=0,pady=0,sticky="news")
-        self.frame_header_menu.grid(column=0,row=2,ipadx=0,ipady=0,padx=10,pady=0,sticky="news")
-        self.frame_menuoptions.grid(column=0,row=3,ipadx=0,ipady=0,padx=10,pady=0,sticky="news")
+        self.frame_header_menu.grid(column=0,row=2,ipadx=0,ipady=0,padx=0,pady=0,sticky="news")
+        self.frame_menuoptions.grid(column=0,row=3,ipadx=0,ipady=0,padx=0,pady=0,sticky="news")
         self.frame_content.grid(column=0,row=4,ipadx=0,ipady=0,padx=10,pady=0,sticky="news")
 
         #widgets frame_header

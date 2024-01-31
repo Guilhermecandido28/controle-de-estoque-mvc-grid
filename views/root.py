@@ -18,12 +18,14 @@ class Root(Tk):
         #self.minsize(width=min_width, height=min_height)
         self.title("Controle fincanceiro")
 
-        self.configure(bg='red')
+        self.configure(bg='white')
+        
+        self.minsize(1500, 1000)
 
-        # Na linha 4, 'frame_content' deve preencher a altura
-        # ao ser expandido.
-        self.rowconfigure(4, weight=1)
-
-        # Os frames na coluna 0 devem preencher a largura
-        # completa ao serem expandidos até o final.
+        # O mecanismo adotado para trocar os frames
+        # adiciona um frame 0,0, pai dos demais. Esse comando
+        # serve para permiti-lo expandir ao redimensionar a janela.
+        self.rowconfigure(0, weight=1)
         self.columnconfigure(0, weight=1)
+        
+        

@@ -44,14 +44,8 @@ class OndeEstou:
         self.texto = texto
         self.diretorio = diretorio
 
-    def localizador(self):
-        
-        # self.frame.place(
-        #     relx=0,
-        #     rely=0.14
-        #     relwidth=1,
-        #     relheight=0.09) # coloca o frame na interface
-        
+    def localizador(self):      
+       
         self.frame.create_text(
         100,
         30,

@@ -6,12 +6,12 @@ class HomeController:
     def __init__(self, model: Model, view: View) -> None:
         self.model = model
         self.view = view
-        self.frame = self.view.frames["home"]
+      #  self.frame = self.view.frames["home"]
         self._bind()
 
     def _bind(self) -> None:
         """Binds controller functions with respective buttons in the view"""
-        self.frame.signout_btn.config(command=self.logout)
+       # self.frame.signout_btn.config(command=self.logout)
 
     def logout(self) -> None:
         self.model.auth.logout()
