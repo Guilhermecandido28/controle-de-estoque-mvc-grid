@@ -3,7 +3,7 @@ from tkinter import constants
 import tkinter as tk
 from tkinter import ttk
 from .header import HeaderView
-from .functions_view.functions import OndeEstou, Diretorios
+from .functions_view.functions import OndeEstou, Diretorios, Entrys
 
 
 class ClienteHomeView(HeaderView):
@@ -28,7 +28,9 @@ class ClienteHomeView(HeaderView):
 
         self.entry_pesquisa = tk.Entry(self.frame_menuoptions, font=('arial 14'), bg="#8A8A8A", bd=0,width=29)
         self.entry_pesquisa.grid(column=0,row=0,sticky='ew')
-        self.entry_pesquisa.insert(0, "Procure por cliente...")
+        self.entry_pesquisa.insert(0, "         Procure por cliente...")
+        self.entry_pesquisa.bind("<Button-1>", lambda event: Entrys.apagar_entry(self.entry_pesquisa))
+
 
         #Botao pesquisa
         self.btn_search = tk.Button(self.frame_menuoptions, text='', bg="#8A8A8A", bd=0, cursor='hand2',font=('arial 14 bold'), image=Diretorios('search.png').img,height=3,width= 8)

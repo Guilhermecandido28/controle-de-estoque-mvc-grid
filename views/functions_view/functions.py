@@ -1,6 +1,6 @@
 import os
 from tkinter import PhotoImage
-from tkinter.constants import NW
+from tkinter.constants import NW, END
 from PIL import Image, ImageTk
 
 class Diretorios:
@@ -59,6 +59,11 @@ class OndeEstou:
         self.obj = Redimensionamento(imagem) # classe reponsavel pelo redimensionamento eventual da imagem
         
         self.frame.bind('<Configure>', lambda event: self.obj.resize(self.frame, event)) # metodo que responsavel por iniciar o processo de redimensionamento.
+
+class Entrys:
+    def apagar_entry(entry):        
+        entry.delete(0, END) # deleta tudo do entry
+
         
 
 
