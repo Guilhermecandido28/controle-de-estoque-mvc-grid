@@ -1,6 +1,5 @@
 from tkinter import *
 import tkinter as tk
-import os
 from .functions_view.functions import Diretorios
 
 

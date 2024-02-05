@@ -6,6 +6,7 @@ from .header import HeaderView
 from .functions_view.functions import OndeEstou, Diretorios, Entrys
 
 
+
 class ClienteHomeView(HeaderView):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

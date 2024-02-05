@@ -1,25 +1,28 @@
 from tkinter import Button
 from typing import TypedDict
 
+from views.client_register import ClienteRegisterView
+from views.home import HomeView
 from .root import Root
 from .clientehome import ClienteHomeView
+from views.header import HeaderView
 
 
 class Frames(TypedDict):
    # signup: SignUpView
-   # signin: SignInView
-   # home: HomeView
-    clientehome: ClienteHomeView
+    client_register: ClienteRegisterView
+    home: HomeView
+    client_home: ClienteHomeView
 
 
 class View:
     def __init__(self):
         self.root = Root()
         self.frames: Frames = {}  # type: ignore
-        self._add_frame(ClienteHomeView, "clientehome")
-     #   self._add_frame(SignUpView, "signup")
+        self._add_frame(ClienteHomeView, "client_home")
+        self._add_frame(ClienteRegisterView, "client_register")
       #  self._add_frame(SignInView, "signin")
-      #  self._add_frame(HomeView, "home")
+        self._add_frame(HomeView, "home")
        
    
 
@@ -33,7 +36,6 @@ class View:
         # Na linha 4, 'frame_content' deve preencher a altura
         # ao ser expandido.
         self.frames[name].rowconfigure(4, weight=1)
-
 
         self.frames[name].configure(bg='#8A8A8A')
 
