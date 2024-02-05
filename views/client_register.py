@@ -115,6 +115,7 @@ class ClienteRegisterView(HeaderView):
         self.title_instagram.place(relx= 0.49 , rely=0.295) 
         self.e_instagram = Entry(self.frame_content_form, bg='#ADADAD', font=('arial 12'), bd=0)
         self.e_instagram.place(relx=0.49, rely=0.34, relwidth=0.18, relheight=0.04)
+        
         #placeholder_instagram(self.e_instagram)
             #cometário
         self.title_comment = Label(self.frame_content_form, text="OBS:", font=('arial 12'), foreground='#ADADAD', bg='white')
@@ -194,3 +195,6 @@ class ClienteRegisterView(HeaderView):
         self.tvw_hist.heading("#2", text="NOME", anchor=CENTER)
         self.tvw_hist.heading("#3", text="VALOR", anchor=CENTER)
         
+
+
+
