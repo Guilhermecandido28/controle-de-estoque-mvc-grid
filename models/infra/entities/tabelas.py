@@ -1,4 +1,4 @@
-from infra_db.configs.base import Base
+from ...infra.configs.base import Base
 from sqlalchemy import Column, String, Integer, Numeric, BLOB, Date, REAL
 
 class Estoque(Base):

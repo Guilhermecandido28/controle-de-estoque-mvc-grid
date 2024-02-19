@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter as tk
-from .functions_view.functions import Diretorios
+from controllers.helpers.functions import Diretorios
 
 
 class HeaderView(Frame):

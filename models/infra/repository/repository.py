@@ -1,7 +1,8 @@
-from infra_db.configs.connection import DBConnection
-from infra_db.entities.tabelas import *
+from ...infra.configs.connection import DBConnection
+from ...infra.entities.tabelas import *
 from sqlalchemy.orm.exc import NoResultFound
 from typing import Type, Dict, Union
+from sqlalchemy.orm import Query
 
 class Repository:
     def __init__(self, Tabela: Type) -> None:
@@ -23,8 +24,15 @@ class Repository:
         with DBConnection() as db:
             data = db.session.query(self.tabela).all()
             return data
+    
+    def select_with_columns(self,):
+        try:
+            with DBConnection() as db:
+                return # a função que eu preciso aqui
+        except Exception as ex:
+            raise ValueError(f"Erro ao selecionar colunas: {ex}")
         
-    def select_filter(self, coluna: str, filtro: str):
+    def select_filter(self, coluna: Union[str, list], filtro: str):
         """
         Seleciona registros da tabela com base em um filtro aplicado a uma coluna específica.
 
@@ -45,6 +53,26 @@ class Repository:
                 return data
             except NoResultFound:
                 return None
+    def select_with_columns(self, *columns):
+        """
+        Seleciona os valores específicos das colunas da tabela.
+
+        Args:
+            *columns (str): Nomes das colunas que você deseja selecionar.
+
+        Returns:
+            List: Uma lista de tuplas contendo os valores das colunas selecionadas para cada registro.
+
+        Example:
+            # Selecionar os valores das colunas "nome" e "idade"
+            repositorio.select_with_columns("nome", "idade")
+        """
+        try:
+            with DBConnection() as db:
+                query: Query = db.session.query(*[getattr(self.tabela, col) for col in columns])
+                return query.all()
+        except Exception as ex:
+            raise ValueError(f"Erro ao selecionar colunas: {ex}")
         
     def insert(self, colunas: Dict):
         """

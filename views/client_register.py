@@ -2,7 +2,7 @@ from tkinter import CENTER, W, LEFT, PhotoImage, Button, Canvas, Entry, Label, S
 import tkinter as tk
 from tkinter import ttk
 from .header import HeaderView
-from .functions_view.functions import OndeEstou, Diretorios
+from controllers.helpers.functions import OndeEstou, Diretorios
 
 class ClienteRegisterView(HeaderView):
     def __init__(self, *args, **kwargs):
