@@ -3,7 +3,7 @@ from tkinter import constants
 import tkinter as tk
 from tkinter import ttk
 from .header import HeaderView
-from .functions_view.functions import OndeEstou, Diretorios, Entrys
+from controllers.helpers.functions import OndeEstou, Diretorios, Entrys
 
 
 
